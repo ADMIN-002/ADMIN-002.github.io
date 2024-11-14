@@ -72,13 +72,10 @@
                 <h2>Our Services</h2>
                 <p>Description of services offered.</p>
             </section>
-        </main>
-    </div>
-    <script src="script.js"></script>
-    <h1>Comment Section</h1>
+                <section>
+        <h1>Comment Section</h1>
     
     <!-- Comment Input Section -->
-    <section>
         <div class="comment-section">
             <textarea id="commentInput" class="comment-box" placeholder="Write a comment..."></textarea><br>
             <button class="submit-btn" onclick="submitComment()">Submit Comment</button>
@@ -103,7 +100,6 @@
                     commentList.appendChild(li);
                 });
             }
-        </section>
 
         // Function to submit a new comment
         function submitComment() {
@@ -123,5 +119,10 @@
         // Load the comments when the page loads
         window.onload = loadComments;
     </script>
+    </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+
 </body>
 </html>
