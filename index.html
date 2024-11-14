@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with Sidebar</title>
+    <title>Wilderness Survival</title>
     <link rel="stylesheet" href="styles.css">
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comment Section with LocalStorage</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -57,6 +56,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#comments">Comments</a></li>
             </ul>
         </aside>
         <main class="content">
@@ -78,30 +78,32 @@
     <h1>Comment Section</h1>
     
     <!-- Comment Input Section -->
-    <div class="comment-section">
-        <textarea id="commentInput" class="comment-box" placeholder="Write a comment..."></textarea><br>
-        <button class="submit-btn" onclick="submitComment()">Submit Comment</button>
-    </div>
+    <section>
+        <div class="comment-section">
+            <textarea id="commentInput" class="comment-box" placeholder="Write a comment..."></textarea><br>
+            <button class="submit-btn" onclick="submitComment()">Submit Comment</button>
+        </div>
     
-    <h2>Comments:</h2>
-    <ul id="commentList" class="comment-list">
-        <!-- Comments will appear here -->
-    </ul>
+        <h2>Comments:</h2>
+        <ul id="commentList" class="comment-list">
+            <!-- Comments will appear here -->
+        </ul>
 
-    <script>
-        // Function to load comments from localStorage
-        function loadComments() {
-            const comments = JSON.parse(localStorage.getItem('comments')) || [];
-            const commentList = document.getElementById('commentList');
-            commentList.innerHTML = '';  // Clear current list
+        <script>
+            // Function to load comments from localStorage
+            function loadComments() {
+                const comments = JSON.parse(localStorage.getItem('comments')) || [];
+                const commentList = document.getElementById('commentList');
+                commentList.innerHTML = '';  // Clear current list
             
-            comments.forEach(comment => {
-                const li = document.createElement('li');
-                li.classList.add('comment-item');
-                li.innerHTML = `<p>${comment}</p>`;
-                commentList.appendChild(li);
-            });
-        }
+                comments.forEach(comment => {
+                    const li = document.createElement('li');
+                    li.classList.add('comment-item');
+                    li.innerHTML = `<p>${comment}</p>`;
+                    commentList.appendChild(li);
+                });
+            }
+        </section>
 
         // Function to submit a new comment
         function submitComment() {
